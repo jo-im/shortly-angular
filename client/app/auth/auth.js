@@ -11,6 +11,8 @@ angular.module('shortly.auth', [])
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/links');
+        document.getElementById('signingin').style.display = 'none';
+        document.getElementById('signingup').style.display = 'none';
       })
       .catch(function (error) {
         console.log('you aint in there');
@@ -23,7 +25,10 @@ angular.module('shortly.auth', [])
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/links');
-      })
+        document.getElementById('signingin').style.display = 'none';
+        document.getElementById('signingup').style.display = 'none';      
+   })
+
       .catch(function (error) {
         document.getElementById('hidemyuser').style.visibility = 'visible';
         console.log("already in thereeeeee");

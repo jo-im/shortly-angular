@@ -1,4 +1,4 @@
-<div id='container' ng-app='shortly.links' ng-controller="LinksController" >
+<div id='container' class='link' ng-app='shortly.links' ng-controller="LinksController" >
 <input type="text" ng-model='search'>Live Search </input>
 <br/>
 Here are some links:
@@ -7,7 +7,9 @@ Here are some links:
     <ul>
       <li>
 <a ng-click='somefunction($index)' ng-href={{x[2]}} >{{x[0]}}<a>
-      </li> {{x.pig}}  <h3>Visits:{{x[3]}}</h3>
+      </li> 
+    <div class='original'>{{x.pig}}</div>
+        <h3 class='visits'>Visits:<div class='count'>{{x[3]}}</div></h3>
     </ul>
   </li>
 </ol>

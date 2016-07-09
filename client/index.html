@@ -7,15 +7,16 @@
   </head>
   <body ng-controller='shortlyController'>
     <h1>Shortly</h1> 
-    <button ng-click='test()'>Signout</button>
-<ul class='navigation'>
-            <li><a href="/#signin">Sign In</a></li>
-            <li><a href="/#signup">Sign Up</a></li>
-            <li><a href="/#links">Links</a></li>
-             <li><a href="/#shorten">Shorten</a></li>
-           
-          
+    <button ng-click='test()' style="background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px">Signout</button>
+    <nav class='navigation'>
+<ul>
+            <li id='signingin' style="display:inline"><a href="/#signin">Sign In</a></li>
+            <li id='signingup' style="display:inline"><a href="/#signup">Sign Up</a></li>
+            <li id='linking' style="display:none"><a href="/#links">Links</a></li>
+             <li id='shortening' style="display:none"><a href="/#shorten">Shorten</a></li>
     </ul>
+</nav>
+
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
 
@@ -28,3 +29,4 @@
     <script src="app/app.js"></script>
   </body>
 </html>
+

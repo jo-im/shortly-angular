@@ -34,6 +34,7 @@ angular.module('shortly.services', [])
       document.getElementById('hideme').style.visibility = 'visible';
     } else {
       document.getElementById('hideme').style.visibility = 'hidden';
+       document.getElementById('goodjob').style.visibility = 'visible';
     }
   
     return $http({
@@ -70,8 +71,11 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
-     
+     document.getElementById('linking').style.display = 'inline';
+     document.getElementById('shortening').style.display = 'inline';
       return resp.data.token;
+
+
     });
   };
 
@@ -82,6 +86,8 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
+       document.getElementById('linking').style.display = 'inline';
+     document.getElementById('shortening').style.display = 'inline';
       return resp.data.token;
     });
   };
@@ -91,8 +97,14 @@ angular.module('shortly.services', [])
   };
 
   var signout = function () {
+
+  document.getElementById('signingin').style.display = 'inline';
+  document.getElementById('signingup').style.display = 'inline';
+    document.getElementById('linking').style.display = 'none';
+     document.getElementById('shortening').style.display = 'none';
     $window.localStorage.removeItem('com.shortly');
     $location.path('/signin');
+  
   };
   var testingg=function(){
     console.log('wdefsdkjfhsdkhfkwejhfbklsehf');
