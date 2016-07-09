@@ -13,7 +13,8 @@ angular.module('shortly.auth', [])
         $location.path('/links');
       })
       .catch(function (error) {
-        console.error(error);
+        console.log('you aint in there');
+        document.getElementById('hidemypassword').style.visibility = 'visible';
       });
   };
 

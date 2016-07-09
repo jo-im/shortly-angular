@@ -11,7 +11,7 @@ angular.module('shortly.links', [])
     
     $scope.data.links = links;
     console.log(links);
-
+ 
 
 
     $scope.usefulData = $scope.data.links.map(function(x) { 
