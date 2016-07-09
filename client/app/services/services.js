@@ -26,6 +26,8 @@ angular.module('shortly.services', [])
       });
   };
 
+
+
   return {
     getAll: something,
     addOne: addOne
@@ -70,12 +72,15 @@ angular.module('shortly.services', [])
     $window.localStorage.removeItem('com.shortly');
     $location.path('/signin');
   };
-
+  var testingg=function(){
+    console.log('wdefsdkjfhsdkhfkwejhfbklsehf');
+  };
 
   return {
     signin: signin,
     signup: signup,
     isAuth: isAuth,
-    signout: signout
+    signout: signout,
+    test:testingg
   };
 });
