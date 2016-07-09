@@ -1,6 +1,8 @@
 <div id='container' ng-app='shortly.links' ng-controller="LinksController" >
 
 Here are some links:
-
-
+<ol>
+<li ng-repeat="x in usefulData" ng-repeat='y in names'><ul><li><a ng-href={{x[2]}}>{{x[0]}}<a></li> {{x[1]}}</ul></li>
+</ol>
 </div>
+
