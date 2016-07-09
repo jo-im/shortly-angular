@@ -48,6 +48,8 @@ describe('LinksController', function () {
     createController();
     $httpBackend.flush();
 
+console.log('testingggg',$scope.data.links);
+   
     expect($scope.data.links).to.deep.equal(mockLinks);
   });
 });

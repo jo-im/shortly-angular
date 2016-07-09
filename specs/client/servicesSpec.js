@@ -30,6 +30,7 @@ describe('Services', function () {
     });
 
     it('should get all links with `getAll`', function () {
+
       var mockResponse = [
         { title: 'Twitter',
           url: 'https://twitter.com' },
@@ -40,11 +41,15 @@ describe('Services', function () {
       $httpBackend.expect('GET', '/api/links').respond(mockResponse);
 
       Links.getAll().then(function (links) {
+        //console.log('linksssssssssssss',links);
         expect(links).to.deep.equal(mockResponse);
       });
-
+        
       $httpBackend.flush();
     });
+
+
+
 
     it('should add a new link with `addOne`', function () {
       var github = { url: 'https://github.com/hackreactor-labs' };
@@ -57,6 +62,7 @@ describe('Services', function () {
         });
 
       Links.addOne(github).then(function (resp) {
+        //console.log('the responsee', resp,resp.status,resp.data);
         expect(resp.status).to.equal(201);
         expect(resp.data.title).to.equal('Hack Reactor Labs');
       });
