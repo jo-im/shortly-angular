@@ -1,11 +1,15 @@
 angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, Links) {
-    $scope.data = {};
-    var first=Links.getAll().then(function (links) {
-        $scope.data.links=links;
-      });
- // var second=first.$$state.value;
+  $scope.usefulData = [];
+  $scope.data = {};
+  var first = Links.getAll().then(function (links) {
+    $scope.data.links = links;
+    $scope.usefulData =$scope.data.links.map(function(x){return "shortly.com/"+x.code});
+  console.log($scope.usefulData)
+  });
+
+
 
 });
 
