@@ -1,15 +1,15 @@
 <div id='container' ng-app='shortly.links' ng-controller="LinksController" >
-
+<input type="text" ng-model='search'>Live Search </input>
+<br/>
 Here are some links:
 <ol>
-  <li ng-repeat="x in usefulData" ng-repeat='y in names'>
+  <li ng-repeat="x in usefulData| orderBy:'-[3]'|filter:search">
     <ul>
       <li>
 <a ng-click='somefunction($index)' ng-href={{x[2]}} >{{x[0]}}<a>
-      </li> {{x[1]}}  <h3>Visits:{{x[3]}}</h3>
+      </li> {{x.pig}}  <h3>Visits:{{x[3]}}</h3>
     </ul>
   </li>
 </ol>
 </div>
 
-<!-- ADD THIS FOR LINK  -->

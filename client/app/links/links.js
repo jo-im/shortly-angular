@@ -14,12 +14,14 @@ angular.module('shortly.links', [])
 
 
 
-    $scope.usefulData =$scope.data.links.map(function(x){return ["shortly.com/"+x.code,x.title,x.url,x.visits]; });
-   console.log($scope.usefulData);
+    $scope.usefulData = $scope.data.links.map(function(x) { 
+      return {0:'shortly.com/' + x.code, "pig":x.title, 2:x.url, 3:x.visits}; 
+    });
+     
 
-    $scope.somefunction = function(info) {
+    $scope.somefunction = function(index) {
       console.log(links[info]);
-      Links.updateVisits(links[info]);
+      Links.updateVisits(links[index]);
     };
 
   });
