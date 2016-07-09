@@ -13,6 +13,21 @@ angular.module('shortly.services', [])
       });
   };
 
+  var updateVisits = function(info) {
+
+    return $http({
+      method: 'GET',
+      url: '/'+info.code,
+      data: info
+    })
+        .then(function (resp) {
+          console.log(resp);
+          return resp;
+        });
+  };
+
+
+
   var addOne = function(info) {
 
     return $http({
@@ -26,9 +41,8 @@ angular.module('shortly.services', [])
       });
   };
 
-
-
   return {
+    updateVisits: updateVisits,
     getAll: something,
     addOne: addOne
   };
